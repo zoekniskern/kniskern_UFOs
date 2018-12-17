@@ -25,8 +25,8 @@
     <div id="page">
       <div class='row'> <!--row class-->
         <div class='col-md-5'>
-            <img id='polaroid' src='/rileymartin_ufo.jpg' alt='polaroid'>
-            <img class="drawing" id='cow' src='/drawing1.png' alt='cow'>
+            <img id='polaroid' src='rileymartin_ufo.jpg' alt='polaroid'>
+            <img class="drawing" id='cow' src='drawing1.png' alt='cow'>
         </div>
         <div class='col-md-7'>
             <p>Historically, the subject of UFOs or Unidentified Flying Objects, has been laughed at as the overexcitement of average joes at the sight of anything remotely unfamiliar in the sky. However, in an age where space travel is longer unthinkable and technology has advanced significantly, are UFOs back on the academic menu?
@@ -34,7 +34,7 @@
             <p>Many <a href="http://www.nuforc.org/index.html">civilian groups</a> have formed data collectives to track and study UFO sightings, even a <a href="https://viterbischool.usc.edu/news/2018/07/data-crunching-class-looks-to-the-skies-to-explore-ufo-sightings/">group of 60 masters students</a> examined UFO documentation for a data science project!</p>
             <p>While it seems that reported sightings have decreaesed, potentially due to a lack of interest, a recent Defense Intelligence Agency briefing <a href="https://www.theguardian.com/science/2018/oct/15/ufo-sightings-may-be-falling-but-congress-is-still-paying-attention">suggests that Pentagon's long alleged UFO project is still operational.</a></p>
             <p>Pan, zoom and hover around the map below to see details of some recorded UFO sightings between 1949 and 2013!</p>
-            <img class="drawing" id='pyramid' src='/drawing4.png' alt='pyramid'>
+            <img class="drawing" id='pyramid' src='drawing4.png' alt='pyramid'>
         </div>
       </div>
     </br>
@@ -73,13 +73,13 @@
             <svg id='multiples'></svg>
         </div>
         <div class='col-md-3'>
-            <img class="drawing" id='rocket' src='/drawing2.png' alt='rocket'>
+            <img class="drawing" id='rocket' src='drawing2.png' alt='rocket'>
         </div>
       </div> <!--row class-->
     </div> <!--page class-->
     <!-- add your HTML here -->
     <script type='text/javascript'>
-      d3.json("/world-countries.json", makeMap);
+      d3.json("world-countries.json", makeMap);
 
       //d3.csv("scrubbed.csv", function(csv) { console.log(csv); });
     </script>
