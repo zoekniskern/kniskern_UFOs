@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang='en'>
+  <head>
+    <title>UFO Sightings!</title>
+    <meta charset="utf-8">
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.js"></script>
+    <script src="//d3js.org/d3.v3.min.js"></script>
+    <script src="//d3js.org/d3.geo.projection.v0.min.js"></script>
+    <script src='main2.js'></script>
+    <script src='bar.js'></script>
+    <link rel="stylesheet" href="main.css">
+    <!-- <link href="/d3-geomap/css/d3.geomap.css" rel="stylesheet">
+    <script src="/d3-geomap/vendor/d3.geomap.dependencies.min.js"></script>
+    <script src="/d3-geomap/js/d3.geomap.min.js"></script> -->
+    <!-- <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script> -->
+    <!-- Bootstrap CSS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+  </head>
+
+  <body>
+    <h1 id='pageTitle'>UFO Sightings Around the World</h1>
+    <div id="page">
+      <div class='row'> <!--row class-->
+        <div class='col-md-5'>
+            <img id='polaroid' src='/rileymartin_ufo.jpg' alt='polaroid'>
+            <img class="drawing" id='cow' src='/drawing1.png' alt='cow'>
+        </div>
+        <div class='col-md-7'>
+            <p>Historically, the subject of UFOs or Unidentified Flying Objects, has been laughed at as the overexcitement of average joes at the sight of anything remotely unfamiliar in the sky. However, in an age where space travel is longer unthinkable and technology has advanced significantly, are UFOs back on the academic menu?
+            </p>
+            <p>Many <a href="http://www.nuforc.org/index.html">civilian groups</a> have formed data collectives to track and study UFO sightings, even a <a href="https://viterbischool.usc.edu/news/2018/07/data-crunching-class-looks-to-the-skies-to-explore-ufo-sightings/">group of 60 masters students</a> examined UFO documentation for a data science project!</p>
+            <p>While it seems that reported sightings have decreaesed, potentially due to a lack of interest, a recent Defense Intelligence Agency briefing <a href="https://www.theguardian.com/science/2018/oct/15/ufo-sightings-may-be-falling-but-congress-is-still-paying-attention">suggests that Pentagon's long alleged UFO project is still operational.</a></p>
+            <p>Pan, zoom and hover around the map below to see details of some recorded UFO sightings between 1949 and 2013!</p>
+            <img class="drawing" id='pyramid' src='/drawing4.png' alt='pyramid'>
+        </div>
+      </div>
+    </br>
+      <h2>Interactive Map!</h2>
+      <div class='row'> <!--row class-->
+        <div class='col-md-8'>
+          <svg id='map'></svg>
+        </div>
+        <div class='col-md-4'>
+          <!-- http://duspviz.mit.edu/d3-workshop/mapping-data-with-d3/ -->
+          <div id="sliderContainer">
+            <div class='row'>
+            <div class='col-8'>
+              <p>Slide to see sightings highlighted by year:</p>
+              <input id="timeslide" type="range" min="0" max="64" value="0" step="1"/><br>
+            </div>
+            <div class='col-4'>
+              <span id="range">1949</span>
+            </div>
+            </div>
+          </div>
+          <div id="stickynote">
+            <p id='currentInfo'>Please hover over a point</p>
+            <p id='currentInfoLoc'></p>
+          </div>
+        </div>
+      </div> <!--row class-->
+    </br>
+      <h2>The UFO & US Love Affair</h2>
+      <div class='row'> <!--row class-->
+        <div class='col-md-5'>
+            <p>One common critique of UFO sighting data, is that a majority of it comes from the US. As you can see in the bar chart, this is undisputably true of this dataset. This could be attributed to an american affinity to science fiction and country-wide culture or interest in extra terrestrial life!</p>
+            <p>Some scientists urge people to look past the UFO track record, arguing that although many of the reported sightings may not be extra terrestrial, the existance other life forms in this universe is still highly likely!</p>
+        </div>
+        <div id="barchart" class='col-md-4'>
+            <svg id='multiples'></svg>
+        </div>
+        <div class='col-md-3'>
+            <img class="drawing" id='rocket' src='/drawing2.png' alt='rocket'>
+        </div>
+      </div> <!--row class-->
+    </div> <!--page class-->
+    <!-- add your HTML here -->
+    <script type='text/javascript'>
+      d3.json("/world-countries.json", makeMap);
+
+      //d3.csv("scrubbed.csv", function(csv) { console.log(csv); });
+    </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
+  </body>
+</html>
