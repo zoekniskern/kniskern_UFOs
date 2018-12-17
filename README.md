@@ -1,6 +1,8 @@
 # kniskern_UFOs
 Data visualization of UFO siting dataset
 
+
+
 #Project Documentation
 1. The original dataset was over 80,000 rows. Using OpenRefine and some choices on which data I could remove for the sake of efficiency in loading speed, my final set is about 13,000.
 2. I was definitely interested in the locations of the sightings. My secondary interest had been in the shape, and although I was able to properly nest the data and intended to create linked small multiples, I was not able to achieve this. Instead I showed how many sightings were in each country both visually and numerically.
